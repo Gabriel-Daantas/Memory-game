@@ -1,0 +1,252 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'); */
+
+/* Global Variables */
+:root {
+    --trapeziun-1: rgb(75, 45, 207);
+    --trapeziun-2: rgb(0, 168, 98);
+    --trapeziun-3: rgb(214, 200, 0);
+    --trapeziun-4: rgb(190, 15, 196);
+    --trapeziun-5: rgb(0, 152, 179);
+    --trapeziun-6: rgb(255, 81, 0);
+
+    --trapeziun-correct: rgb(41, 248, 0);
+    --trapeziun-wrong: rgb(212, 0, 0);
+
+    --dark-gray: rgb(36, 36, 36);
+    --dark-gray-fade: rgba(68, 68, 68, 0.5);
+    --button-color: rgb(153, 153, 153);
+    --scoreboard-box-color: rgba(210, 34, 216, 0.336);
+    --scoreboard-box-border-color: rgb(210, 34, 216);
+    --timer-box-color: rgb(75, 75, 75);
+}
+
+/* ---------------------------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    /* Escolher font dps */
+}
+
+body {
+    background: var(--dark-gray);
+    width: 100vw;
+    height: 100%;
+}
+
+.container {
+    user-select: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.game-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
+    width: 45vw;
+    border-top-right-radius: 20%;
+    border-bottom-left-radius: 20%;
+}
+
+.game-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 90%;
+    border-radius: 10%;
+}
+
+.trapeziun {
+    position: absolute;
+    width: 145px;
+    height: 0;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    clip-path: polygon(26% 0%, 74% 0%, 100% 100%, 0% 100%);
+    opacity: 0.3;
+}
+
+.trapeziun-hover {
+    cursor: pointer;
+}
+
+.trapeziun-hover:hover {
+    opacity: 1;
+}
+
+.activate-trapeziun {
+    opacity: 1;
+}
+
+.correct-trapeziun {
+    border-bottom: 140px solid var(--trapeziun-correct);
+}
+
+.wrong-trapeziun {
+    border-bottom: 140px solid var(--trapeziun-wrong);
+}
+
+.hexagon {
+    width: 140px;
+    height: 100px;
+    position: relative;
+    background: var(--timer-box-color);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    cursor: pointer;
+    opacity: 1;
+}
+
+.hexagon:hover {
+    opacity: 0.6;
+}
+
+.hexagon-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    -webkit-text-stroke: 1px #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+}
+
+.trapeziun:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(60deg) translate(230px) rotate(-90deg);
+    animation: floating-1 5s linear infinite;
+}
+
+.trapeziun:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(120deg) translate(230px) rotate(-90deg);
+    animation: floating-2 5s linear infinite;
+}
+
+.trapeziun:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(180deg) translate(230px) rotate(-90deg);
+    animation: floating-3 5s linear infinite;
+}
+
+.trapeziun:nth-child(4) {
+    transform: translate(-50%, -50%) rotate(240deg) translate(230px) rotate(-90deg);
+    animation: floating-4 5s linear infinite;
+}
+
+.trapeziun:nth-child(5) {
+    transform: translate(-50%, -50%) rotate(300deg) translate(230px) rotate(-90deg);
+    animation: floating-5 5s linear infinite;
+}
+
+.trapeziun:nth-child(6) {
+    transform: translate(-50%, -50%) rotate(0deg) translate(230px) rotate(-90deg);
+    animation: floating-6 5s linear infinite;
+}
+
+.trapeziun-1 {border-bottom: 140px solid var(--trapeziun-1);}
+.trapeziun-2 {border-bottom: 140px solid var(--trapeziun-2);}
+.trapeziun-3 {border-bottom: 140px solid var(--trapeziun-3);}
+.trapeziun-4 {border-bottom: 140px solid var(--trapeziun-4);}
+.trapeziun-5 {border-bottom: 140px solid var(--trapeziun-5);}
+.trapeziun-6 {border-bottom: 140px solid var(--trapeziun-6);}
+
+.scoreboard-box {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 70vh;
+    width: 25vw;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+    padding: 0 50px;
+    height: 90%;
+
+    background: var(--scoreboard-box-color);
+    border: 3px solid #ff19cd;
+    border-radius: 5px;
+    border-top-right-radius: 20%;
+    border-bottom-left-radius: 20%;
+
+    color: #fff;
+    font-size: 20px;
+    -webkit-text-stroke: 1px var(--dark-gray-fade);
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff
+}
+
+
+/* ---------------------------------------------------------------------- */
+
+@keyframes floating-1 {
+    0%, 100% {
+        transform: translate(-50%, -50%) rotate(60deg) translate(230px) rotate(-90deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(60deg) translate(210px) rotate(-90deg);
+    }
+}
+
+@keyframes floating-2 {
+    0%, 100% {
+        transform: translate(-50%, -50%) rotate(120deg) translate(230px) rotate(-90deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(120deg) translate(210px) rotate(-90deg);
+    }
+}
+
+@keyframes floating-3 {
+    0%, 100% {
+        transform: translate(-50%, -50%) rotate(180deg) translate(230px) rotate(-90deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg) translate(210px) rotate(-90deg);
+    }
+}
+
+@keyframes floating-4 {
+    0%, 100% {
+        transform: translate(-50%, -50%) rotate(240deg) translate(230px) rotate(-90deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(240deg) translate(210px) rotate(-90deg);
+    }
+}
+
+@keyframes floating-5 {
+    0%, 100% {
+        transform: translate(-50%, -50%) rotate(300deg) translate(230px) rotate(-90deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(300deg) translate(210px) rotate(-90deg);
+    }
+}
+
+@keyframes floating-6 {
+    0%, 100% {
+        transform: translate(-50%, -50%) rotate(0deg) translate(230px) rotate(-90deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(0deg) translate(210px) rotate(-90deg);
+    }
+}
