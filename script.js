@@ -28,7 +28,6 @@ let repeatIndexes = []
 async function activateRandomTrapezoid() {
     let randomIndex = Math.floor(Math.random() * trapezoids.length);
     indexes.push(randomIndex);
-    repeatIndexes.push(randomIndex);
 
     for (let i = 0; i < indexes.length; i++) {
         trapezoids[indexes[i]].classList.add('activate-trapeziun');
@@ -41,6 +40,7 @@ async function activateRandomTrapezoid() {
     for (let i = 0; i < 6; i++) {
         trapezoids[i].classList.add('trapeziun-hover');
     }
+    repeatIndexes.push(randomIndex);
 }
 
 
@@ -319,8 +319,17 @@ resetButton.addEventListener("click", function () {
 
 for (let i = 0; i < trapezoids.length; i++) {
     trapezoids[i].addEventListener('click', async () => {
-        if (indexes != '') {
+        if (repeatIndexes.length == nivel && repeatIndexes.length > 0) {
+            console.log(repeatIndexes.length)
+            console.log(nivel)
+            console.log('são iguais')
+
             handleClickTrapezoid(i);
+
+        } else {
+            console.log(nivel)
+            console.log(repeatIndexes.length)
+            console.log('Não são iguais ou não é maior que 0')
         }
     });
 }

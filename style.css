@@ -161,36 +161,45 @@ body {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
 }
 
+.trapeziun:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(60deg) translate(230px) rotate(-90deg);
+}
+.trapeziun:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(120deg) translate(230px) rotate(-90deg);
+}
+.trapeziun:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(180deg) translate(230px) rotate(-90deg);
+}
+.trapeziun:nth-child(4) {
+    transform: translate(-50%, -50%) rotate(240deg) translate(230px) rotate(-90deg);
+}
+.trapeziun:nth-child(5) {
+    transform: translate(-50%, -50%) rotate(300deg) translate(230px) rotate(-90deg);
+}
+.trapeziun:nth-child(6) {
+    transform: translate(-50%, -50%) rotate(0deg) translate(230px) rotate(-90deg);
+}
+
 
 .trapeziun-1 {
     border-bottom: 140px solid var(--trapeziun-1);
-    transform: translate(-50%, -50%) rotate(60deg) translate(230px) rotate(-90deg);
 }
-
 .trapeziun-2 {
     border-bottom: 140px solid var(--trapeziun-2);
-    transform: translate(-50%, -50%) rotate(120deg) translate(230px) rotate(-90deg);
 }
-
 .trapeziun-3 {
     border-bottom: 140px solid var(--trapeziun-3);
-    transform: translate(-50%, -50%) rotate(180deg) translate(230px) rotate(-90deg);
 }
-
 .trapeziun-4 {
     border-bottom: 140px solid var(--trapeziun-4);
-    transform: translate(-50%, -50%) rotate(240deg) translate(230px) rotate(-90deg);
 }
-
 .trapeziun-5 {
     border-bottom: 140px solid var(--trapeziun-5);
-    transform: translate(-50%, -50%) rotate(300deg) translate(230px) rotate(-90deg);
 }
-
 .trapeziun-6 {
     border-bottom: 140px solid var(--trapeziun-6);
-    transform: translate(-50%, -50%) rotate(0deg) translate(230px) rotate(-90deg);
 }
+
 
 .trapeziun-animation-1 {
     animation: floating-1 5s ease-in-out infinite;;
