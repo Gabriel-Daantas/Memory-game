@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,14 +13,15 @@
 <body>
     <div class="container">
         <div class="game-container">
+            <h1 class="level-title">Nível: </h1>
             <div class="game-box">
-                <div class="trapeziun trapeziun-1"></div>
-                <div class="trapeziun trapeziun-2"></div>
-                <div class="trapeziun trapeziun-3"></div>
-                <div class="trapeziun trapeziun-4"></div>
-                <div class="trapeziun trapeziun-5"></div>
-                <div class="trapeziun trapeziun-6"></div>
-                <div class="hexagon">
+                <div class="trapeziun trapeziun-1 trapeziun-animation-1"></div>
+                <div class="trapeziun trapeziun-2 trapeziun-animation-2"></div>
+                <div class="trapeziun trapeziun-3 trapeziun-animation-3"></div>
+                <div class="trapeziun trapeziun-4 trapeziun-animation-4"></div>
+                <div class="trapeziun trapeziun-5 trapeziun-animation-5"></div>
+                <div class="trapeziun trapeziun-6 trapeziun-animation-6"></div>
+                <div class="hexagon hidden-element">
                     <div class="hexagon-content">
                         <p>Iniciar</p>
                     </div>
@@ -29,13 +31,26 @@
 
         <div class="scoreboard-box">
             <div class="scoreboard">
-                <h1>Nível: </h1>
-                <h2>Chances restantes: </h2>
-                <h2>Melhor pontuação: </h2>
+                <div class="input-box">
+                    <h1 class="player-name hidden-element"></h1>
+                    <input class="player-name-input" type="text" placeholder="Ex: Clebinho" required autocomplete="off">
+                    <button class="player-name-button" type="button">Confirmar</button>
+                </div>
+
+                <div class="player-list"></div>
+
+                <div class="scoreboard-box-bottom">
+                    <div class="infos">
+                        <h2>Chances restantes: 0</h2>
+                        <h2>Melhor pontuação: 0</h2>
+                    </div>
+                    <button class="reset-button">Sair</button>
+                </div>
             </div>
         </div>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
+
 </html>
