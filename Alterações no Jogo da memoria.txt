@@ -1,0 +1,15 @@
+(Feito) - Nivel na esquerda acima do jogo
+
+(Feito) - Qtd. de Chances
+(Feito) - Chances restantes
+
+*Tirar o float effect*
+
+Colocar BD local
+
+
+(Feito) - Tirar o Verde quando acerta
+
+Pedir nome
+Listar participantes
+
