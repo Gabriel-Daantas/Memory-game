@@ -259,6 +259,7 @@ body {
 }
 
 .player-list {
+    min-width: 70%;
     max-height: 600px;
     min-height: 400px;
     padding: 5px 15px;
@@ -269,7 +270,9 @@ body {
 }
 
 .player-list h1 {
-    border-bottom: 5px dashed var(--scoreboard-box-border-color);
+    justify-content: center;
+    text-align: center;
+    border-bottom: 4px dashed var(--scoreboard-box-border-color);
 }
 
 ::-webkit-scrollbar {

@@ -285,7 +285,12 @@ playerButton.addEventListener('click', async function () {
         }
 
         playernameDisplay.textContent = `${playerName}`;
-        bestScoreDisplay.textContent = `Melhor pontuação: ${playerData[playerIndex].score}`;
+        try {
+            bestScoreDisplay.textContent = `Melhor pontuação: ${playerData[playerIndex].score}`;
+
+        } catch (error) {
+            bestScoreDisplay.textContent = 'Melhor pontuação: 0';
+        }
 
         await new Promise(resolve => setTimeout(resolve, 2000));
         startButtonBox.classList.remove('hidden-element');
@@ -305,7 +310,8 @@ startButton.addEventListener('click', () => {
         nivel = 0;
         mistakes = 0;
         levelUp()
-    } else {
+    } else if (startButton.textContent.trim() == 'Reiniciar') {
+        startButton.textContent = 'Aguarde';
         restartGame()
     }
 });
@@ -320,16 +326,7 @@ resetButton.addEventListener("click", function () {
 for (let i = 0; i < trapezoids.length; i++) {
     trapezoids[i].addEventListener('click', async () => {
         if (repeatIndexes.length == nivel && repeatIndexes.length > 0) {
-            console.log(repeatIndexes.length)
-            console.log(nivel)
-            console.log('são iguais')
-
             handleClickTrapezoid(i);
-
-        } else {
-            console.log(nivel)
-            console.log(repeatIndexes.length)
-            console.log('Não são iguais ou não é maior que 0')
         }
     });
 }
